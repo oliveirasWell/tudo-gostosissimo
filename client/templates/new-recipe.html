@@ -1,0 +1,68 @@
+<template name="new-recipe">
+    <div class="page recipes">
+        {{> nav title='Nova Receita' black=true}}
+
+        <div class="content-scrollable">
+
+            <div class="bg-image home">
+                <div style="padding-top: 45px; padding-bottom: 25px">
+                    <input class="js-recipe-name" type="text"
+                           style="display: block; background-color: #eeeeee; color: #333333; width: 100%"
+                           placeholder="Nome da receita"/>
+                </div>
+            </div>
+
+            <h2 class="list-title" style="background-color: #828282">Ingrediêntes</h2>
+
+            <div style="margin: 2%">
+                <div style="padding-top: 45px; padding-bottom: 25px">
+                    <input class="js-add-ingredients-input" type="text"
+                           style="text-align:center; display: block; background-color: #eeeeee; color: #333333; width: 100%"
+                           placeholder="Quantidade e nome ingrediênte"/>
+                    <button class="btn-primary js-add-ingredients"
+                            style="text-align:center;display: block; width: 100%"> + ingrediente
+                    </button>
+                </div>
+            </div>
+
+
+            <ul class="list-ingredients" style="background-color: #828282">
+                {{#each ingredients}}
+                    <li class="item-ingredient">{{this}} <span> - </span></li>
+                {{/each}}
+            </ul>
+
+            <h2 class="list-title">Passos</h2>
+
+            <div style="margin: 2%">
+                <div style="padding-top: 45px; padding-bottom: 25px">
+                    <input class="js-add-directions-input" type="text"
+                           style="text-align:center; display: block; background-color: #eeeeee; color: #333333; width: 100%"
+                           placeholder="Descrição passo"/>
+                    <button class="btn-primary js-add-directions"
+                            style="text-align:center;display: block; width: 100%"> + Passo
+                    </button>
+                </div>
+            </div>
+
+            <ol class="list-directions">
+                {{#each directions}}
+                    <li class="item-direction">
+                        <span class="text">{{this}}</span>
+                    </li>
+                {{/each}}
+            </ol>
+
+            <div style="margin: 2%">
+                <a href="#" class="btn-primary js-photo-save" style="display: block; margin-bottom: 5px"> + foto </a>
+            </div>
+
+            <a href="{{pathFor 'recipes'}}" class="btn-primary js-open" style="margin-top: 5px; display: block">Gravar receita</a>
+
+
+        </div>
+
+
+    </div>
+</template>
+

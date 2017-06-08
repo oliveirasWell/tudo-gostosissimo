@@ -1,18 +1,29 @@
 <template name="recipes">
-  <div class="page recipes">
-    {{> nav title='Recipes' black=true}}
+    <div class="page recipes">
+        {{> nav title='Receitas' black=true}}
 
-    <div class="content-scrollable">
-      <div class="list-recipes">
-        {{#each this}}
-          {{#if highlighted}}
-            {{> recipeItem recipe=this size='large'}}
-          {{else}}
-            {{> recipeItem recipe=this size='small'}}
-          {{/if}}
-        {{/each}}
-      </div>
+        <div class="content-scrollable">
+
+            <div class="bg-image home">
+                <div style="padding-top: 45px; padding-bottom: 25px">
+                    <input class="js-recipe-name" type="text"
+                           style="display: block; background-color: #eeeeee; color: #333333; width: 100%"
+                           placeholder="Nome da receita"/>
+                    <button class="btn-primary"
+                            style="text-align:center;display: block; width: 100%"> Pesquisar</button>
+                </div>
+            </div>
+
+            <div class="list-recipes" id="list-recipes">
+                {{#each this}}
+                    {{> recipeItem recipe=this size='small'}}
+                {{/each}}
+            </div>
+
+            <div class="js-no-result" style="padding-top: 50px; text-align: center;">
+                Nenhuma receita encontrada.
+            </div>
+        </div>
+
     </div>
-
-  </div>
 </template>

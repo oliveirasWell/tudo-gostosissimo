@@ -1,10 +1,10 @@
 App.info({
-  name: 'Local Market',
-  description: 'A recipe sharing app made in Meteor.',
-  author: 'Percolate Studio Team',
-  email: 'us@percolatestudio.com',
-  website: 'http://percolatestudio.com',
-  version: '0.0.1'
+  name: 'Tudo Gostosissimo',
+  description: '',
+  author: '',
+  email: '',
+  website: '',
+  version: '0.0.0.1'
 });
 
 App.icons({

@@ -22,6 +22,7 @@ Template.recipe.onRendered(function () {
     },
     preventDefaultEvents: false
   });
+    Template.recipe.setTab('make')
 });
 
 // CSS transitions can't tell the difference between e.g. reaching
@@ -56,36 +57,21 @@ Template.recipe.helpers({
 });
 
 Template.recipe.events({
-  'click .js-add-bookmark': function(event) {
-    event.preventDefault();
-
-    if (! Meteor.userId())
-      return Overlay.open('authOverlay');
-    
-    Meteor.call('bookmarkRecipe', this.name);
-  },
-
-  'click .js-remove-bookmark': function(event) {
-    event.preventDefault();
-
-    Meteor.call('unbookmarkRecipe', this.name);
-  },
-  
   'click .js-show-recipe': function(event) {
     event.stopPropagation();
     Template.recipe.setTab('make')
   },
-  
+
   'click .js-show-feed': function(event) {
     event.stopPropagation();
     Template.recipe.setTab('feed')
   },
-  
-  'click .js-uncollapse': function() {
-    Template.recipe.setTab('recipe')
-  },
 
   'click .js-share': function() {
     Overlay.open('shareOverlay', this);
+  },
+
+  'click .btn-primary': function() {
+      Template.recipe.setTab('make');
   }
 });
