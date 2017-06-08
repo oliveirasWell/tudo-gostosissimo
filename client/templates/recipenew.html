@@ -1,4 +1,4 @@
-<template name="new-recipe">
+<template name="recipenew">
     <div class="page recipes">
         {{> nav title='Nova Receita' black=true}}
 
@@ -28,7 +28,7 @@
 
             <ul class="list-ingredients" style="background-color: #828282">
                 {{#each ingredients}}
-                    <li class="item-ingredient">{{this}} <span> - </span></li>
+                    <li class="item-ingredient" style="margin: 5px; text-align: center">{{this}} <span> - </span></li>
                 {{/each}}
             </ul>
 
@@ -47,7 +47,7 @@
 
             <ol class="list-directions">
                 {{#each directions}}
-                    <li class="item-direction">
+                    <li class="item-direction" style="margin: 5px; text-align: center">
                         <span class="text">{{this}}</span>
                     </li>
                 {{/each}}
@@ -58,11 +58,7 @@
             </div>
 
             <a href="{{pathFor 'recipes'}}" class="btn-primary js-open" style="margin-top: 5px; display: block">Gravar receita</a>
-
-
         </div>
-
-
     </div>
 </template>
 

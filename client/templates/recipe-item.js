@@ -7,9 +7,5 @@ Template.recipeItem.helpers({
     if (this.size === 'large')
       return 'highlighted';
   },
-  
-  bookmarkCount: function () {
-    var count = BookmarkCounts.findOne({recipeName: this.name});
-    return count && count.count;
-  }
+
 });
