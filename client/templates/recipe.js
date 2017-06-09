@@ -48,12 +48,6 @@ Template.recipe.helpers({
   activeTabClass: function() {
     return Session.get(TAB_KEY);
   },
-  bookmarked: function() {
-    return Meteor.user() && _.include(Meteor.user().bookmarkedRecipeNames, this.name);
-  },
-  activities: function() {
-    return Activities.find({recipeName: this.name}, {sort: {date: -1}});
-  }
 });
 
 Template.recipe.events({
