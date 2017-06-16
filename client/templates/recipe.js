@@ -1,4 +1,4 @@
-var TAB_KEY = 'recipeShowTab';
+const TAB_KEY = 'recipeShowTab';
 
 Template.recipe.onCreated(function() {
   if (Router.current().params.activityId)
@@ -31,15 +31,16 @@ Template.recipe.onRendered(function () {
 //   class that indicates if the feed tab should slide out of the
 //   way smoothly, right away, or after the transition is over
 Template.recipe.setTab = function(tab) {
-  var lastTab = Session.get(TAB_KEY);
+  const lastTab = Session.get(TAB_KEY);
   Session.set(TAB_KEY, tab);
   
-  var fromRecipe = (lastTab === 'recipe') && (tab !== 'recipe');
-  $('.feed-scrollable').toggleClass('instant', fromRecipe);
+  const fromRecipe = (lastTab === 'recipe') && (tab !== 'recipe');
+    let $feed = $('.feed-scrollable');
+    $feed.toggleClass('instant', fromRecipe);
 
-  var toRecipe = (lastTab !== 'recipe') && (tab === 'recipe');
-  $('.feed-scrollable').toggleClass('delayed', toRecipe);
-}
+  const toRecipe = (lastTab !== 'recipe') && (tab === 'recipe');
+  $feed.toggleClass('delayed', toRecipe);
+};
 
 Template.recipe.helpers({
   isActiveTab: function(name) {
